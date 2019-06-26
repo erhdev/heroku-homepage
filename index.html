@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        body {
+            background-image: url("background.gif");
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='my-apps'>
+        <div class='columns'>
+        <div v-for="app in webApps">
+            <div class='column'>
+                <a src='app.address'>
+                    <h3>{{app.name}}</h3>
+                </a>
+                <p>{{app.description}}. It is deployed on {{app.deployment}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <h1>This site very tentatively built with Bulma and Vue. Updates pending.</h1>
+    <script>
+        var app = new Vue({
+            el: "#my-apps",
+            data: {
+                webApps: [
+                    {
+                        name: "Fomo No Mo",
+                        address: 'http://fomonomo.site/',
+                        deployment: "",
+                        description: "This project was a team effort. It implements "
+                    },
+                    {
+                        name: "Whats4Dinner",
+                        address: 'http://whats4dinner-mytestproject1.apps.us-east-2.online-starter.openshift.com/',
+                        deployment: "Openshift",
+                    },
+                    {
+                        name: "Vaporman",
+                        address: 'https://madflowerr.github.io/HangmanProject/',
+                        deployment: "Github Pages"
+                    },
+                    {
+                        name: "MatchMakrr",
+                        address: 'https://match-makrr.herokuapp.com/',
+                        deployment: "Heroku"
+                    },
+                    {
+                        name: "D3",
+                        address: 'https://github.com/madflowerr/liri-node-app',
+                        deployment: "CLI"
+                    },
+                ],
+
+            },
+            methods: {},
+        })
+    </script>
+</body>
+
+</html>
